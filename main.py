@@ -17,6 +17,7 @@ def extract_code_blocks(content: str) -> str:
 
 def loop(object: smtp.Smtp_send, Data, message_bot):
     for data in Data:
+        print("Message reçu : " + data["content"])
         msg: str = bot.bot(message_bot, data["content"])
         msg = extract_code_blocks(msg)
         print("Message du bot : " + Fore.BLUE + msg + Fore.RESET)
